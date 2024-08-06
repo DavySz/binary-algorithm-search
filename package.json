@@ -1,0 +1,25 @@
+{
+  "name": "binary-algorithm-search",
+  "version": "1.0.0",
+  "main": "dist/main/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --passWithNoTests --silent --noStackTrace --runInBand"
+  },
+  "keywords": [
+    "binary",
+    "search",
+    "tim sort",
+    "algorithm"
+  ],
+  "license": "MIT",
+  "author": "Davy de Souza Assunção",
+  "description": "Just a binary search algorithm",
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  }
+}
