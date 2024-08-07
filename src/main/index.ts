@@ -1,8 +1,8 @@
-import { makeAscSorter, makeBinarySearch } from "./factories";
+import { search, sort } from "../presenters";
 
-const methods = {
-  search: makeBinarySearch(),
-  sort: makeAscSorter(),
+const binary = {
+  search: search,
+  sort: sort,
 };
 
-export { methods };
+export { binary };

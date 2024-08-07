@@ -1,26 +1,18 @@
-import { BinarySearch, SorterStrategy } from "../domain";
+export function search(list: number[], target: number): number {
+  let right = list.length - 1;
+  let left = 0;
 
-export class BinarySearchImpl implements BinarySearch {
-  constructor(private readonly ascSorter: SorterStrategy) {}
+  while (left <= right) {
+    const middle = Math.floor((left + right) / 2);
 
-  execute(list: number[], target: number): number {
-    const sortedList = this.ascSorter.sort(list);
+    if (list[middle] === target) return middle;
 
-    let right = sortedList.length - 1;
-    let left = 0;
-
-    while (left <= right) {
-      const middle = Math.floor((left + right) / 2);
-
-      if (sortedList[middle] === target) return middle;
-
-      if (sortedList[middle] < target) {
-        left = middle + 1;
-      } else {
-        right = middle - 1;
-      }
+    if (list[middle] < target) {
+      left = middle + 1;
+    } else {
+      right = middle - 1;
     }
-
-    return -1;
   }
+
+  return -1;
 }

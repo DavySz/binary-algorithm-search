@@ -1,7 +1,5 @@
-import { SorterStrategy } from "../../domain";
-
-export class AscSorterImpl implements SorterStrategy {
-  private insertionSort(
+export class Sorters {
+  public insertionSort(
     array: number[],
     leftIndex: number,
     rightIndex: number
@@ -21,7 +19,7 @@ export class AscSorterImpl implements SorterStrategy {
     }
   }
 
-  private merge(
+  public merge(
     array: number[],
     leftIndex: number,
     middleIndex: number,
@@ -64,27 +62,5 @@ export class AscSorterImpl implements SorterStrategy {
       rightArrayIndex++;
       mergedArrayIndex++;
     }
-  }
-
-  sort(list: number[]): number[] {
-    const RUN_LENGTH = 32;
-    let listLength = list.length;
-
-    for (let i = 0; i < listLength; i += RUN_LENGTH) {
-      this.insertionSort(list, i, Math.min(i + RUN_LENGTH - 1, listLength - 1));
-    }
-
-    for (let size = RUN_LENGTH; size < listLength; size = 2 * size) {
-      for (let leftIndex = 0; leftIndex < listLength; leftIndex += 2 * size) {
-        let middleIndex = Math.min(leftIndex + size - 1, listLength - 1);
-        let rightIndex = Math.min(leftIndex + 2 * size - 1, listLength - 1);
-
-        if (middleIndex < rightIndex) {
-          this.merge(list, leftIndex, middleIndex, rightIndex);
-        }
-      }
-    }
-
-    return list;
   }
 }
