@@ -1,14 +1,21 @@
 {
   "name": "binary-algorithm-search",
-  "version": "3.0.0",
+  "version": "3.2.0",
   "main": "dist/main/index.js",
   "types": "dist/main/index.d.ts",
   "files": [
     "/dist"
   ],
   "scripts": {
-    "build": "tsc",
-    "test": "jest --passWithNoTests --silent --noStackTrace --runInBand"
+    "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
   },
   "keywords": [
     "binary",
@@ -16,14 +23,11 @@
     "tim sort",
     "algorithm"
   ],
-  "license": "MIT",
+  "license": "ISC",
   "author": "Davy de Souza Assunção",
   "description": "Binary search algorithm",
-  "devDependencies": {
-    "@types/jest": "^29.5.12",
-    "jest": "^29.7.0",
-    "ts-jest": "^29.2.4",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.5.4"
+  "repository": {
+    "url": "https://github.com/davysz/binary-algorithm-search/tree/master",
+    "type": "git"
   }
 }

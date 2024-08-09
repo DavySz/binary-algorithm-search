@@ -1,12 +1,11 @@
-import { Sorters } from "./helpers/sorters";
+import { insertionSorter } from "./insertion-sorter.presentation";
 
 export function sort(list: number[]): number[] {
   const RUN_LENGTH = 32;
   let listLength = list.length;
-  const sorter = new Sorters();
 
   for (let i = 0; i < listLength; i += RUN_LENGTH) {
-    sorter.insertionSort(list, i, Math.min(i + RUN_LENGTH - 1, listLength - 1));
+    insertionSorter(list, i, Math.min(i + RUN_LENGTH - 1, listLength - 1));
   }
 
   for (let size = RUN_LENGTH; size < listLength; size = 2 * size) {
@@ -15,7 +14,7 @@ export function sort(list: number[]): number[] {
       let rightIndex = Math.min(leftIndex + 2 * size - 1, listLength - 1);
 
       if (middleIndex < rightIndex) {
-        sorter.merge(list, leftIndex, middleIndex, rightIndex);
+        mergeSorter(list, leftIndex, middleIndex, rightIndex);
       }
     }
   }
